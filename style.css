@@ -1,0 +1,149 @@
+/* Reset Geral */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Variáveis alinhadas ao tema Agrinho 2026 */
+:root {
+    --primary-color: #2e7d32;     /* Verde Mata/Sustentabilidade */
+    --secondary-color: #8d6e63;   /* Tom de Terra/Raízes */
+    --text-dark: #263238;         /* Cinza escuro para melhor contraste */
+    --white: #ffffff;
+    --transition: all 0.3s ease;
+}
+
+body {
+    padding-top: 80px; /* Evita que o header fixo cubra o conteúdo */
+    background-color: #f9fbe7; /* Fundo suave levemente esverdeado */
+}
+
+/* Header Estilização */
+.header {
+    background-color: var(--white);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+/* Logotipo */
+.logo a {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+.logo a span {
+    color: var(--primary-color);
+}
+
+/* Links do Menu Desktop */
+.nav-list {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 600;
+    font-size: 1rem;
+    position: relative;
+    transition: var(--transition);
+}
+
+.nav-link:hover {
+    color: var(--primary-color);
+}
+
+/* Efeito de linha bonita ao passar o mouse */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--primary-color);
+    transition: var(--transition);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Menu Hambúrguer Estilização */
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.hamburger .bar {
+    width: 28px;
+    height: 3px;
+    background-color: var(--primary-color);
+    border-radius: 4px;
+    transition: var(--transition);
+}
+
+/* 📱 Media Query para Responsividade (Mobile) */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: -100%; /* Escondido acima da tela inicial */
+        left: 0;
+        width: 100%;
+        background-color: var(--white);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        transition: var(--transition);
+    }
+
+    /* Classe dinâmica ativada via JS */
+    .nav-menu.active {
+        top: 72px; /* Aparece exatamente abaixo do header */
+    }
+
+    .nav-list {
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 0;
+        gap: 25px;
+    }
+
+    /* Animação do Hambúrguer transformando-se em 'X' */
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+}
