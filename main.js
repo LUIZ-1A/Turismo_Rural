@@ -1,38 +1,41 @@
-// main.js - Funcionalidades do site
+// main.js
 
-// Lista de destinos de turismo rural
+// Lista de destinos
 const destinos = [
     {
         nome: "Fazenda Bela Vista",
-        descricao: "Experimente a vida no campo com trilhas, cavalgadas e colheita de frutas."
+        descricao: "Experimente a vida no campo com trilhas, cavalgadas e colheita de frutas.",
+        imagem: "https://images.unsplash.com/photo-1556761175-4b46a572b786"
     },
     {
         nome: "Sítio Verdejante",
-        descricao: "Aproveite o contato com animais, horta orgânica e aulas de culinária rural."
+        descricao: "Contato com animais, horta orgânica e aulas de culinária rural.",
+        imagem: "https://images.unsplash.com/photo-1526772662000-3f88f10405ff"
     },
     {
         nome: "Recanto das Flores",
-        descricao: "Relaxe entre jardins, lago e atividades de ecoturismo."
+        descricao: "Relaxe entre jardins, lago e atividades de ecoturismo.",
+        imagem: "https://images.unsplash.com/photo-1501004318641-b39e6451bec6"
     }
 ];
 
-// Seleciona o container e adiciona os destinos dinamicamente
 const destinosContainer = document.getElementById("destinos-card");
 
 destinos.forEach(destino => {
     const card = document.createElement("div");
     card.classList.add("card-item");
     card.innerHTML = `
+        <img src="${destino.imagem}" alt="${destino.nome}">
         <h3>${destino.nome}</h3>
         <p>${destino.descricao}</p>
     `;
     destinosContainer.appendChild(card);
 });
 
-// Formulário de contato
+// Formulário
 const form = document.getElementById("contato-form");
 form.addEventListener("submit", function(e) {
     e.preventDefault();
-    alert("Mensagem enviada com sucesso! Entraremos em contato em breve.");
+    alert("Mensagem enviada com sucesso!");
     form.reset();
 });
