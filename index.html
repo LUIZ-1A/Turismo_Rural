@@ -1,36 +1,55 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Turismo Rural - Agrinho 2026</title>
+    <title>Turismo Rural</title>
+    <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <header class="header">
-        <div class="container">
-            <div class="logo">
-                <a href="#">Agro<span>Turismo</span></a>
-            </div>
-            
-            <nav class="nav-menu" id="nav-menu">
-                <ul class="nav-list">
-                    <li><a href="#inicio" class="nav-link">Início</a></li>
-                    <li><a href="#roteiros" class="nav-link">Roteiros</a></li>
-                    <li><a href="#sustentabilidade" class="nav-link">Sustentabilidade</a></li>
-                    <li><a href="#vivencias" class="nav-link">Vivências</a></li>
-                    <li><a href="#contato" class="nav-link">Contato</a></li>
-                </ul>
-            </nav>
-
-            <button class="hamburger" id="hamburger" aria-label="Abrir menu de navegação">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </button>
-        </div>
+    <header>
+        <h1>Turismo Rural</h1>
+        <nav>
+            <a href="#sobre">Sobre</a>
+            <a href="#destinos">Destinos</a>
+            <a href="#contato">Contato</a>
+        </nav>
     </header>
+
+    <main>
+        <section id="sobre">
+            <h2>Sobre o Turismo Rural</h2>
+            <p>O turismo rural oferece experiências únicas no campo, permitindo contato com a natureza, cultura local e atividades agrícolas.</p>
+        </section>
+
+        <section id="destinos">
+            <h2>Destinos Populares</h2>
+            <div class="card" id="destinos-card">
+                <!-- Os destinos serão adicionados pelo JavaScript -->
+            </div>
+        </section>
+
+        <section id="contato">
+            <h2>Contato</h2>
+            <form id="contato-form">
+                <label for="nome">Nome:</label><br>
+                <input type="text" id="nome" name="nome" required><br><br>
+
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" required><br><br>
+
+                <label for="mensagem">Mensagem:</label><br>
+                <textarea id="mensagem" name="mensagem" rows="4" required></textarea><br><br>
+
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Turismo Rural. Todos os direitos reservados.</p>
+    </footer>
 
     <script src="main.js"></script>
 </body>
