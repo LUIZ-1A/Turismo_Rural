@@ -4,64 +4,94 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Turismo Rural</title>
+
   <link rel="stylesheet" href="reset.css">
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-  <header class="header">
-    <h1>Turismo Rural</h1>
-    <nav>
-      <a href="#sobre">Sobre</a>
-      <a href="#destinos">Destinos</a>
-      <a href="#contato">Contato</a>
-    </nav>
-  </header>
+<header class="header">
+  <h1>🌿 Turismo Rural</h1>
+  <nav>
+    <a href="#sobre">Sobre</a>
+    <a href="#destinos">Destinos</a>
+    <a href="#galeria">Galeria</a>
+    <a href="#contato">Contato</a>
+  </nav>
+</header>
 
-  <section class="hero">
+<section class="hero">
+  <div class="hero-content">
     <h2>Descubra a tranquilidade do campo</h2>
-    <p>Experiências únicas em meio à natureza, fazendas e cultura local.</p>
-    <button onclick="mostrarMensagem()">Quero viajar</button>
-  </section>
+    <p>Experiências únicas entre natureza, cultura e descanso.</p>
+    <button onclick="scrollDestinos()">Explorar destinos</button>
+  </div>
+</section>
 
-  <section id="sobre" class="section">
-    <h2>Sobre o Turismo Rural</h2>
-    <p>
-      O turismo rural oferece experiências autênticas no campo, com contato direto
-      com a natureza, comidas típicas e hospitalidade acolhedora.
-    </p>
-  </section>
+<section id="sobre" class="section">
+  <h2>Sobre o Turismo Rural</h2>
+  <p>
+    Viva experiências autênticas no campo: fazendas, trilhas, comida caseira,
+    animais e paisagens naturais incríveis.
+  </p>
+</section>
 
-  <section id="destinos" class="section">
-    <h2>Destinos Populares</h2>
+<section id="destinos" class="section">
+  <h2>🌎 Destinos Populares</h2>
 
-    <div class="cards">
-      <div class="card">
-        <h3>Fazendas Históricas</h3>
-        <p>Conheça propriedades antigas cheias de história.</p>
-      </div>
+  <div class="cards">
 
-      <div class="card">
-        <h3>Eco Pousadas</h3>
-        <p>Hospedagens sustentáveis no meio da natureza.</p>
-      </div>
-
-      <div class="card">
-        <h3>Trilhas e Cachoeiras</h3>
-        <p>Aventura e paisagens naturais incríveis.</p>
-      </div>
+    <div class="card" onclick="abrirModal('Fazendas Históricas', 'Explore fazendas antigas com cultura e história.', this)">
+      <img src="https://images.unsplash.com/photo-1500595046743-cd271d694d30" />
+      <h3>Fazendas Históricas</h3>
+      <p>História e cultura rural.</p>
     </div>
-  </section>
 
-  <section id="contato" class="section">
-    <h2>Contato</h2>
-    <p>Email: contato@turismorural.com</p>
-  </section>
+    <div class="card" onclick="abrirModal('Eco Pousadas', 'Hospedagens sustentáveis em meio à natureza.', this)">
+      <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511" />
+      <h3>Eco Pousadas</h3>
+      <p>Conforto e natureza.</p>
+    </div>
 
-  <footer class="footer">
-    <p>© 2026 Turismo Rural - Todos os direitos reservados</p>
-  </footer>
+    <div class="card" onclick="abrirModal('Trilhas e Cachoeiras', 'Aventuras em trilhas e cachoeiras incríveis.', this)">
+      <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470" />
+      <h3>Trilhas e Cachoeiras</h3>
+      <p>Aventura natural.</p>
+    </div>
 
-  <script src="main.js"></script>
+  </div>
+</section>
+
+<section id="galeria" class="section">
+  <h2>📸 Galeria</h2>
+
+  <div class="gallery">
+    <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470">
+    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb">
+    <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e">
+    <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e">
+  </div>
+</section>
+
+<section id="contato" class="section">
+  <h2>Contato</h2>
+  <p>Email: contato@turismorural.com</p>
+</section>
+
+<footer class="footer">
+  <p>© 2026 Turismo Rural</p>
+</footer>
+
+<!-- MODAL -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span onclick="fecharModal()" class="close">&times;</span>
+    <h2 id="modal-title"></h2>
+    <p id="modal-text"></p>
+  </div>
+</div>
+
+<script src="main.js"></script>
 </body>
 </html>
